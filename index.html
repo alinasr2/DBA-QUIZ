@@ -488,133 +488,159 @@
 
     <script>
         // --- Quiz Data Initialization ---
-        const questionsData = [
- // MCQ Questions (1-14)
-            {"text": "The need for a ----------is greater today than ever before.", "options": ["DBMs", "DB", "DBA", "Data"], "correctAnswer": "c"},
-            {"text": "One of the largest problems faced by IT organizations is ensuring - database Administration.", "options": ["Data", "Quality", "Services", "Kind"], "correctAnswer": "b"},
-            {"text": "The DBA is often working done in these", "options": ["Data", "end-user", "user", "endeavors"], "correctAnswer": "d"},
-            {"text": "The------- is technically challenging and rewarding, but also potentially one that will exhaust and frustrate you.", "options": ["job of DBA", "salaries of DBA", "Technology of DBA", "technique of DBA"], "correctAnswer": "a"},
-            {"text": "What is not DBA Task of the following?", "options": ["DBMS Release Migration", "Backup and Recovery", "Performance Monitoring and Tuning", "Database Architect"], "correctAnswer": "d"},
-            {"text": "What are factors influence database performance?", "options": ["Optimization", "None of this", "Workload", "A &C"], "correctAnswer": "d"},
-            {"text": "What are types to be prepared for recovery?", "options": ["Recover to current", "Transaction recovery", "Point-in-time recovery", "All of this"], "correctAnswer": "d"},
-            {"text": "What are aspects of integrity?", "options": ["Internal DBMS integrity", "Physical Integrity", "None of this", "A &B"], "correctAnswer": "d"},
-            {"text": "DBA Main tasks include", "options": ["Design", "Architecture", "security", "A & C"], "correctAnswer": "d"},
-            {"text": "DBA Main tasks include", "options": ["Management", "Architecture","definition", "All of this"], "correctAnswer": "d"},
-            {"text": "who is hired to create, maintain, and backup the database", "options": ["DA", "DBA", "SA", "All of this"], "correctAnswer": "b"},
-            {"text": "Is less of a technical role and more of a business role with some technical knowledge", "options": ["DA", "DBA", "SA", "DB"], "correctAnswer": "a"},
-            {"text": "What are DBA Types of the following?", "options": ["Data Modeler", "Data Warehouse Administrator", "All of this", "Performance Analyst"], "correctAnswer": "c"},
-            {"text": "The application DBA focuses on", "options": ["database design","the ongoing support","administration of databases for a specific application or applications.","All of this"], "correctAnswer": "d"},
-// True/False Questions (15-47) ('a' is True, 'b' is False)
-            {"text": "A good DBA needs to enjoy challenges and be good problem solver.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "The job market for DBAs will grow much faster than the average.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "A database isn't an agenized store of data where in the data is accessible by named data element.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "DBAs may implement decisions based on the best fit of application, DBMS, and platform.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Internal DBMS integrity is essential in the following areas:( Pointer consistency, and Backup consistency)", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "The first task of DBA tasks is Database Security and Authorization", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Physical integrity is more difficult to control and less easily defined", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Semantic integrity interest data quality and Redundancy issue", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "The types of applications that must be supported affect the database.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "One of the factors affecting the number of database administrators is the number of requests.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "There is a maximum number of databases that one person is responsible for it.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Do OLTP applications require continuous monitoring?", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "DIM is considered one of the best ways to create an interface.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "DBA should support many databases management systems and databases?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Does managing a multi-platform environment ease the task of managing databases?", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Can new development and maintenance work be done in the test environment while the applications are running?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "With the development of technology, we no longer need a DBA.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The development of a DBA is constantly changing and, however does not present new opportunities.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The goal of the NoSQL platform is to overcome the limitations that often surround relational databases.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Many DBAs should evolve to the new change to adapt NoSQL platforms.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Businesses of all sizes are using Internet technologies to speed up business operations.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "DBA provides simpler and more sustainable storage solutions that automatically maintain multiple copies of your backup data.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The idea behind a DBA certification is to ensure that an individual can perform database administration tasks and duties.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Passing the test is a viable indicator of success with the complexities of database management.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Certification will make you more employable.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Data admin converts data into a convenient data model.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Data admin ensures database security.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "A system administrator is an information technology professional who supports a multiuser computing environment.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Data admin is more of a technical role", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Database admin is a wide role as it has multiple responsibilities", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "A system DBA focuses on business rather than technical issues", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The database architect is involved in new design and development work only.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Data warehouse administrators must be capable DBAs, but with a thorough understanding of the differences between a database that supports OLTP and a data warehouse.", "options": ["True", "False"], "correctAnswer": "a"}
-
-// --- CH4 - True/False Questions ('a' is True, 'b' is False) ---
-            ,{"text": "DATABASE DESIGN It is the process of transforming a logical data model into a physical database design (T/F)", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Build Physical Data Structures map each logical domain of the attribute to a physical data type. (T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Transform Domains to Data Types map each table to a physical structure to store the table's data.(T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Transform Domains to Data Types Map each logical domain to a physical data type.(T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "A normalized database implementation maximizes integrity problems and optimizes updating, perhaps at the expense of retrieval. (T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Denormalization is the process of putting one fact in numerous places. (T/F)", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "If an application system is very active, it may be necessary to split processing into two (or more) distinct components. Such a split will result in the creation of duplicate, or mirror, tables(T/F)", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Views are virtual tables not a logical structure (T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The system time indicates the period during which the data is accurate with respect to the world.(T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "System time is referred to as transaction time, denoting the time when the fact became current in the database. (T/F)", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "A bitemporal table is defined with only a business period. (T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "When a fact is stored in only one place, retrieving many different but related facts usually requires going to many different places. This can speed up the retrieval process. (T/F)", "options": ["True", "False"], "correctAnswer": "b"},
-// --- CH4 - MCQ Questions ---
-            {"text": "Which is Not Characteristics To Create A Physical Database Design", "options": ["Depth knowledge of the database", "Details regarding the manner in which the DBMS", "Data Definition Language", "Transform Entities to Tables"], "correctAnswer": "d"},
-            {"text": "Which is Not TRANSFORMING A LOGICAL DATA MODEL INTO A PHYSICAL MODEL", "options": ["Transform Entities to Tables", "Transform Domains to Data Types", "Data Control Language", "Build Physical Data Structures"], "correctAnswer": "c"},
-            {"text": "If two or more tables need to be joined on a regular basis by an application, but the cost of the join is prohibitive, consider creating", "options": ["pre-joined tables", "report tables", "mirror tables", "split tables"], "correctAnswer": "a"},
-            {"text": "Oftentimes it is impossible to develop an end user report using only SQL. Such a report may require special formatting or data manipulation.", "options": ["pre-joined tables", "report tables", "mirror tables", "split tables"], "correctAnswer": "b"},
-            {"text": "Alter statement in DDL is use to", "options": ["create a database object.", "modify in a database object.", "change the name of the database table.", "delete database object."], "correctAnswer": "b"},
-            {"text": "The logical design, and the snapshot of the data at a given instant in time is known as?", "options": ["Instance & Relation", "Relation & Schema", "Domain & Schema", "Schema & Instance"], "correctAnswer": "d"},
-            {"text": "What happens if a piece of data is stored in two places in the db?", "options": ["Storage space is wasted & Changing the data in one spot will cause data inconsistency", "In can be more easily accessed", "Changing the data in one spot will cause data inconsistency", "Storage space is wasted"], "correctAnswer": "a"},
-            {"text": "A major goal of the db system is to minimize the number of block transfers between the disk and memory. Which of the following helps in achieving this goal?", "options": ["Secondary storage", "Storage", "Catalog", "Buffer"], "correctAnswer": "d"},
-            {"text": "Which of the following establishes a top-to-bottom relationship among the items?", "options": ["Relational schema", "Network schema", "Hierarchical schema", "All of the mentioned"], "correctAnswer": "c"},
-            {"text": "The oldest DB model is", "options": ["Network", "Physical", "Hierarchical", "Relational"], "correctAnswer": "a"},
-            {"text": "Which of the following keys is required to handle the data when the encryption is applied to the data so that the unauthorized user cannot access the data?", "options": ["Primary key", "Authorized key", "Encryption key", "Decryption key"], "correctAnswer": "d"},
-            {"text": " command is used in SQL to issue multiple CREATE TABLE, CREATE VIEW and GRANT statements in a single transaction.", "options": ["CREATE CLUSTER", "CREATE PACKAGE", "CREATE SCHEMA", "All of the mentioned"], "correctAnswer": "c"}
-
-// --- CH5 - True/False Questions ('a' is True, 'b' is False) ---
-            ,{"text": "Isolation level defines how transactions are executed concurrently in a database.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Higher isolation levels provide higher concurrency but lower data consistency.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "The default isolation level in most databases is READ COMMITTED.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "In READ UNCOMMITTED isolation level, transactions can read data that has been modified but not yet committed by another transaction.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "SERIALIZABLE isolation level provides the highest level of data consistency but may lead to higher chances of transaction deadlocks.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "In REPEATABLE READ isolation level, a transaction can modify data that has been read by another transaction but not yet committed.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Isolation levels can be set at the session level, transaction level, or database level.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "In READ COMMITTED isolation level, transactions can read data that has been modified and committed by another transaction.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Lock duration refers to the length of time a transaction takes to complete.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Lock escalation is a process in which multiple locks are consolidated into a single, higher-level lock.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Batch processing involves the processing of a group of transactions as a single unit.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Lock escalation can lead to reduced concurrency among transactions.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Short-term locks are generally preferred because they minimize the amount of time that a resource is unavailable for other users or applications.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Batch processing is typically used for real-time processing of data.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Lock duration is not affected by the isolation level being used.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Lock escalation can help to reduce the overhead associated with managing multiple locks.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Application infrastructure is the combined hardware and software environment?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "The application infrastructure will vary from organization to organization?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "From a software perspective application infrastructure can include database servers, application servers, Web servers, transaction managers, and development frameworks?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "From a mainframe perspective The two most commonly used frameworks are Microsoft .NET and J2EE?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "There are several techniques that can be used to enable an OO programming language to work with a relational database. Serialization is one approach?", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "a planned SQL request is designed and tested for accuracy and efficiency before it is run in a production system.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "It is much better to filter out unwanted data at the DBMS level than to do so within the program.", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "A dynamic SQL statement is optimized at run time", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Transaction is an atomic of work with respect to recovery and consistency", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Consistency means that a transaction must exhibit \"all or nothing\" behavior. Either all of the instructions within the transaction happen, or none of them happen.", "options": ["True", "False"], "correctAnswer": "b"},
-            {"text": "Application server can act as a central point for applications security", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "A good transaction must be designed so that it does not wait for use input", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Transaction must be designed to remove the human element from the equation", "options": ["True", "False"], "correctAnswer": "a"},
-            {"text": "Changes to the application configuration, such as moving a database server, can occur centrally and thereby apply to all users", "options": ["True", "False"], "correctAnswer": "a"},
- // --- CH5 - Multiple-Choice Questions ---
-            {"text": "Which of the following is NOT an isolation level in database management systems?", "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "READ MULTIPLE"], "correctAnswer": "d"},
-            {"text": "Which isolation level allows transactions to read data that has been modified but not yet committed by another transaction?", "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"], "correctAnswer": "a"},
-            {"text": "Which isolation level provides the highest level of data consistency?", "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"], "correctAnswer": "d"},
-            {"text": "Which isolation level is the default in most database management systems?", "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"], "correctAnswer": "b"},
-            {"text": "Lock duration refers to:", "options": ["The length of time a transaction takes to complete", "The length of time a lock is held on a resource in the database", "The length of time a query takes to execute", "The length of time a database connection is open"], "correctAnswer": "b"},
-            {"text": "Lock escalation is a process in which:", "options": ["The database automatically releases all locks held by a transaction", "The database automatically downgrades locks from exclusive to shared", "The database automatically upgrades locks from shared to exclusive", "The database automatically consolidates multiple locks into a single, higher-level lock"], "correctAnswer": "d"},
-            {"text": "Batch processing refers to:", "options": ["The processing of a single transaction at a time", "The processing of multiple transactions simultaneously", "The processing of a group of transactions as a single unit", "The processing of a group of queries as a single unit"], "correctAnswer": "c"},
-            {"text": "Which of the following is an advantage of batch processing?", "options": ["It allows for real-time processing of data", "It reduces the likelihood of data inconsistency", "It allows for greater concurrency among transactions", "It can be used to process complex queries more efficiently"], "correctAnswer": "d"},
-            {"text": "Which of the following is NOT a factor that affects lock duration?", "options": ["The type of lock being used", "The size of the database", "The duration of the transaction", "The isolation level being used"], "correctAnswer": "b"},
-            {"text": "\"FLWOR expression\" of XQuery can be refer :", "options": ["FOR", "LET", "WHERE", "All of above"], "correctAnswer": "d"},
-            {"text": "XML is designed to :", "options": ["Transport data", "store data", "change data", "A&B"], "correctAnswer": "d"},
-            {"text": "The more work the DBMS can do to filter data:", "options": ["the greater the efficiency should be", "less data will need to be moved between the DBMS and the application program as it runs.", "much more to optimizing and tuning SQL.", "All of the above"], "correctAnswer": "d"},
-            {"text": "All of this are the qualities that necessary for a transaction excepted", "options": ["Isolation", "Durability", "Atomicity", "Reliability"], "correctAnswer": "d"},
-            {"text": "Transaction guidelines are", "options": ["Transaction should be short in duration", "Transaction must be designed to remove the human element from the equation", "All of the above", "none"], "correctAnswer": "c"}
-
-
-]
+       const questionsData = [
+    // Parallel Computing Intro Lecture MCQs (Continued)
+    {
+        "text": "The simultaneous use of multiple compute resources to solve a single problem is known as ----------.",
+        "options": ["Serial Computing", "Parallel Computing", "Cloud Storage", "Sequential Processing"],
+        "correctAnswer": "b"
+    }, // [cite: 34]
+    {
+        "text": "The three pillars of the parallel computing process are Decompose, Distribute, and ----------.",
+        "options": ["Delete", "Design", "Coordinate", "Debug"],
+        "correctAnswer": "c"
+    }, // [cite: 189]
+    {
+        "text": "A ---------- is a physical processing unit on a CPU chip that executes instructions independently.",
+        "options": ["Node", "Thread", "Core", "Process"],
+        "correctAnswer": "c"
+    }, // [cite: 27, 28]
+    {
+        "text": "The ratio of serial execution time to parallel execution time ($S = T_{serial} / T_{parallel}$) is called ----------.",
+        "options": ["Latency", "Overhead", "Bandwidth", "Speedup"],
+        "correctAnswer": "d"
+    }, // [cite: 24]
+    {
+        "text": "Which concept refers to the task size relative to the cost of communication?",
+        "options": ["Granularity", "Latency", "Coherence", "Pipelining"],
+        "correctAnswer": "a"
+    }, // [cite: 32]
+    {
+        "text": "In ---------- computing, independent computers (nodes) on a network collaborate to solve a problem.",
+        "options": ["Parallel", "Distributed", "Serial", "Instruction-level"],
+        "correctAnswer": "b"
+    }, // [cite: 57]
+    {
+        "text": "Parallel algorithms are considered the ----------, while parallel computing is the implementation.",
+        "options": ["Hardware", "Theory", "Network", "Bottleneck"],
+        "correctAnswer": "b"
+    }, // [cite: 58]
+    {
+        "text": "According to ---------- Law, even a small percentage of serial code (e.g., 5%) significantly limits maximum speedup.",
+        "options": ["Moore's", "Gustafson's", "Amdahl's", "Newton's"],
+        "correctAnswer": "c"
+    }, // [cite: 81, 140]
+    {
+        "text": "Which of the following is a disadvantage of parallel computing?",
+        "options": ["Massive Speedup", "Programming Complexity", "Fault Tolerance", "Real-Time Capability"],
+        "correctAnswer": "b"
+    }, // [cite: 101, 102]
+    {
+        "text": "A ---------- occurs when multiple threads read/write shared data simultaneously, leading to unpredictable results.",
+        "options": ["Deadlock", "Race Condition", "Load Imbalance", "Memory Wall"],
+        "correctAnswer": "b"
+    }, // [cite: 128, 130]
+    {
+        "text": "---------- Parallelism involves performing the same operation on multiple data elements simultaneously (SIMD).",
+        "options": ["Task", "Bit-level", "Data", "Instruction-level"],
+        "correctAnswer": "c"
+    }, // [cite: 119, 121]
+    {
+        "text": "Which specialized hardware is primarily used for training Large Language Models like GPT-4?",
+        "options": ["Standard CPUs", "GPUs / TPUs", "DRAM", "Hard Drives"],
+        "correctAnswer": "b"
+    }, // [cite: 146, 149, 170]
+    {
+        "text": "The 'Power Wall' and 'Memory Wall' are forces that led to the plateauing of ----------.",
+        "options": ["Data Growth", "Single-core speed", "Cloud availability", "Network latency"],
+        "correctAnswer": "b"
+    }, // [cite: 62, 63, 64]
+    {
+        "text": "When tasks are unequal in size, causing some cores to sit idle, it is known as ----------.",
+        "options": ["Deadlock", "Latency", "Load Imbalance", "Overhead"],
+        "correctAnswer": "c"
+    }, // [cite: 110, 111, 132]
+    {
+        "text": "Which real-world application uses parallel processors to fuse LiDAR, camera, and radar data in under 10ms?",
+        "options": ["VFX Rendering", "Autonomous Vehicles", "Climate Modeling", "Financial Trading"],
+        "correctAnswer": "b"
+    }, // [cite: 176, 178]
+    {
+        "text": "A lightweight unit of execution that shares memory with its siblings is called a ----------.",
+        "options": ["Node", "Core", "Thread", "Process"],
+        "correctAnswer": "c"
+    }, // [cite: 25, 26]
+    {
+        "text": "---------- is the extra cost of parallelization including synchronization and communication.",
+        "options": ["Latency", "Overhead", "Granularity", "Speedup"],
+        "correctAnswer": "b"
+    }, // [cite: 31]
+    {
+        "text": "In parallel computing, communication within a single system is typically ----------.",
+        "options": ["Slow (network)", "Fast (bus/cache)", "Theoretical only", "Abstract"],
+        "correctAnswer": "b"
+    }, // [cite: 57, 185]
+    {
+        "text": "Moore's Law faces physical limits, making ---------- the only scalable path forward for hardware performance.",
+        "options": ["Higher clock speeds", "Adding more cores", "Single-core optimization", "Decreasing RAM"],
+        "correctAnswer": "b"
+    }, // [cite: 64, 65]
+    {
+        "text": "---------- Law offers a more optimistic view of scalability than Amdahl's Law.",
+        "options": ["Newton's", "Moore's", "Gustafson's", "Einstein's"],
+        "correctAnswer": "c"
+    }, // [cite: 141]
+    {
+        "text": "Which of these is NOT a level of parallelism mentioned in the lecture?",
+        "options": ["Bit-level", "Instruction-level", "Cloud-level", "Data-level"],
+        "correctAnswer": "c"
+    }, // [cite: 115, 117, 119]
+    {
+        "text": "A situation where Thread A waits for Thread B, and Thread B waits for Thread A, is called ----------.",
+        "options": ["Race Condition", "Deadlock", "Load Imbalance", "Pipelining"],
+        "correctAnswer": "b"
+    }, // [cite: 129, 131]
+    {
+        "text": "Which protocol is mentioned as a solution for managing cache coherence?",
+        "options": ["HTTP", "TCP/IP", "MESI", "MPI"],
+        "correctAnswer": "c"
+    }, // [cite: 135]
+    {
+        "text": "---------- Computing involves combining CPUs, GPUs, FPGAs, and NPUs on the same system.",
+        "options": ["Homogeneous", "Heterogeneous", "Quantum", "Green"],
+        "correctAnswer": "b"
+    }, // [cite: 148, 150]
+    {
+        "text": "Quantum computers explore multiple states simultaneously using a property called ----------.",
+        "options": ["Pipelining", "Superposition", "Synchronicity", "Serialization"],
+        "correctAnswer": "b"
+    }, // [cite: 152, 155]
+    {
+        "text": "Processing-in-Memory (PIM) is a trend designed to attack the ---------- directly.",
+        "options": ["Power Wall", "Memory Wall", "Network Wall", "Software Wall"],
+        "correctAnswer": "b"
+    }, // [cite: 158, 161]
+    {
+        "text": "Which supercomputer is cited for achieving 1 EFLOP with high energy efficiency?",
+        "options": ["Summit", "Frontier", "Condor", "Grace Hopper"],
+        "correctAnswer": "b"
+    }, // [cite: 163]
+    {
+        "text": "CERN's LHC generates data at a rate of ---------- per second, requiring thousands of parallel CPUs.",
+        "options": ["1 GB", "1 TB", "1 PB", "1 EB"],
+        "correctAnswer": "c"
+    }, // [cite: 181]
+    {
+        "text": "3D MRI reconstruction uses ---------- to reduce diagnosis time from hours to seconds.",
+        "options": ["Serial processors", "GPU clusters", "Single-core CPUs", "Quantum bits"],
+        "correctAnswer": "b"
+    }, // [cite: 184]
+    {
+        "text": "In the summary table, which tool is associated with GPU Computing?",
+        "options": ["OpenMP", "Apache Spark", "CUDA", "AWS Batch"],
+        "correctAnswer": "c"
+    } // [cite: 185]
+];
 
         // --- Global State ---
         let currentQuestionIndex = 0;
